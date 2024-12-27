@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Ular</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #282c34;
+        }
+        canvas {
+            border: 2px solid white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Ukuran grid
+        const gridSize = 20;
+        const tileCount = canvas.width / gridSize;
+
+        // Posisi ular dan makanan
+        let snake = [{ x: 10, y: 10 }];
+        let food = { x: 15, y: 15 };
+
+        // Arah ular
+        let dx = 0;
+        let dy = 0;
+
+        // Game loop
+        function gameLoop() {
+            update();
+            draw();
+            setTimeout(gameLoop, 100);
+        }
+
+        // Perbarui posisi ular
+        function update() {
+            const head = { x: snake[0].x + dx, y: snake[0].y + dy };
+
+            // Cek tabrakan dengan makanan
+            if (head.x === food.x && head.y === food.y) {
+                snake.push({}); // Tambahkan ekor baru
+                placeFood();
+            } else {
+                snake.pop(); // Hapus ekor terakhir
+            }
+
+            // Cek tabrakan dengan dinding atau tubuh
+            if (
+                head.x < 0 || head.x >= tileCount ||
+                head.y < 0 || head.y >= tileCount ||
+                snake.some(segment => segment.x === head.x && segment.y === head.y)
+            ) {
+                resetGame();
+                return;
+            }
+
+            snake.unshift(head);
+        }
+
+        // Gambar ular dan makanan
+        function draw() {
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Gambar ular sebagai lingkaran
+            ctx.fillStyle = 'lime';
+            snake.forEach(segment => {
+                ctx.beginPath();
+                ctx.arc(
+                    segment.x * gridSize + gridSize / 2, // Pusat lingkaran (x)
+                    segment.y * gridSize + gridSize / 2, // Pusat lingkaran (y)
+                    gridSize / 2,                        // Radius lingkaran
+                    0, Math.PI * 2                       // Lingkaran penuh
+                );
+                ctx.fill();
+            });
+
+            // Gambar makanan
+            ctx.fillStyle = 'red';
+            ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
+        }
+
+        // Tempatkan makanan di posisi acak
+        function placeFood() {
+            food = {
+                x: Math.floor(Math.random() * tileCount),
+                y: Math.floor(Math.random() * tileCount)
+            };
+        }
+
+        // Atur ulang permainan
+        function resetGame() {
+            snake = [{ x: 10, y: 10 }];
+            dx = 0;
+            dy = 0;
+            placeFood();
+        }
+
+        // Kontrol arah
+        document.addEventListener('keydown', event => {
+            switch (event.key) {
+                case 'ArrowUp':
+                    if (dy === 0) {
+                        dx = 0;
+                        dy = -1;
+                    }
+                    break;
+                case 'ArrowDown':
+                    if (dy === 0) {
+                        dx = 0;
+                        dy = 1;
+                    }
+                    break;
+                case 'ArrowLeft':
+                    if (dx === 0) {
+                        dx = -1;
+                        dy = 0;
+                    }
+                    break;
+                case 'ArrowRight':
+                    if (dx === 0) {
+                        dx = 1;
+                        dy = 0;
+                    }
+                    break;
+            }
+        });
+
+        // Mulai permainan
+        placeFood();
+        gameLoop();
+    </script>
+</body>
+</html>
