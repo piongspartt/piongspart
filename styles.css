@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-weight: 500;
 }
 
 body{
@@ -39,13 +38,9 @@ body.page-loaded {
     margin: auto;
     padding: 5rem 2rem;
 }
-i{  
-    padding: 10%;
-    width: 100px;
-    height: 200px;
+i{
     background-color: transparent;
 }
-
 
 /*css my instagram*/
 .myinstagram{
@@ -93,7 +88,6 @@ header{
     max-height: 10rem;
     display: flex;
     flex-wrap: wrap;
-    background-color: #ebdddd;
     border-bottom-right-radius: 200%;
 }
 .profil{
@@ -122,13 +116,10 @@ header h1 .span-2{
 header h1 span{
     background: transparent;
 }
-header h1 span:hover{
-    background: pink;
-}
 
 /**navbar**/
 .nav-bar{
-    max-width: 1300px;
+    max-width: 1200px;
     margin: auto;
     position: relative;
     margin: auto;
@@ -151,9 +142,9 @@ header h1 span:hover{
 }
 .nav-bar ul li a:hover{
     transition: 0.3s ease-in-out;
-    background-color: #4285f4;
+    background-color: #1e1e1e;
     color: white;
-    box-shadow:  0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+    box-shadow:  0 0 10px #4285f4, 0 0 20px #4285f4, 0 0 30px #4285f4;
 }
 
 /**container(konten)**/
@@ -161,6 +152,7 @@ header h1 span:hover{
     max-width: 1200px;
     margin: auto;
     position: relative;
+    margin-bottom: 5rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     opacity: 0; /* Awalnya tidak terlihat */
@@ -174,23 +166,26 @@ header h1 span:hover{
 }
 
 .about-1 img{
-    width: 100%;
+    width: 80%;
     align-items: center;
+    margin-left: 2rem;
 }
 
 .about-1 .about h2{
-    font-size: 2.5rem;
+    padding-top: 5rem;
+    font-size: 1.5rem;
     margin-bottom: .5rem;
     color: #e0e0e0;
 }
 .about-1 .about p{
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 1rem;
     color: #b0b0b0;
 }
 
 /**portofolio**/
 .portfolio{
+    margin-bottom: 10rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     opacity: 0; /* Awalnya tidak terlihat */
@@ -222,7 +217,7 @@ header h1 span:hover{
     background-color: #333;
     border: 1px #464646;
     transition: .3s ease-in-out;
-    box-shadow:  0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 30px #00bcd4;
+    box-shadow:  0 0 10px #4285f4, 0 0 20px #4285f4, 0 0 30px #4285f4;
 }
 
 .portfolio .portfolio-item h3{
@@ -263,8 +258,8 @@ header h1 span:hover{
     text-decoration: underline;
 }
 .h2-portfolio{
-    margin-top: 3rem;
-    font-size: 2.5rem;
+    margin: 3rem 2rem;
+    font-size: 2rem;
     text-align: center;
     color: #e0e0e0;
 }
@@ -273,8 +268,9 @@ header h1 span:hover{
 }
 /**services**/
 .services{
+    margin-bottom: 5rem;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     opacity: 0; /* Awalnya tidak terlihat */
     transform: translateY(50px); /* Geser sedikit ke bawah */
     transition: opacity 1s ease-out, transform 1s ease-out;
@@ -288,19 +284,22 @@ header h1 span:hover{
 
 .services h2{
     color: #00ffcc;
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
 }
 .services ul{
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 .services ul li{
     color: #00ffcc;
+    font-size: small;
 }
 .li-services{
     list-style: symbols(-);
     border: 1px transparent;
-    font-size: 2rem;
+    font-size: small;
     transition: .3s ease-in-out;
 }
 .li-services:hover{
@@ -311,11 +310,18 @@ header h1 span:hover{
 
 .li2-services{
     list-style: none;
+    border: 1px transparent;
+    display: flex;
+    gap: 1rem
+;
 }
 .li2-services a{
     border: 1px solid;
     border-radius: 20%;
     transition: .3s ease-in-out;
+    background-color: #1e1e1e;
+    cursor: pointer;
+
 }
 .li2-services .i:hover{
     background: linear-gradient(45deg, #833AB4, #FD1D1D, #F56040, #FCAF45);
@@ -330,8 +336,10 @@ header h1 span:hover{
 .services ul li a{
     text-decoration: none;
     color: #00ffcc;
-    font-size: 1.5rem;
-    padding-right: 1rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+    align-items: center;
 }
 .services ul li a:hover{
     color: #4285f4;
@@ -360,16 +368,15 @@ header h1 span:hover{
 }
 .contact-form h2{
     color: #fff;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 50%;
-    font-size: 6rem;
+    font-size: 1rem;
     margin-bottom: 15px;
     padding: 10px;
-    font-size: 16px;
     border: 1px transparent #ccc;
     border-radius: 5px;
     box-sizing: border-box;
@@ -394,12 +401,12 @@ header h1 span:hover{
 
 .contact-form button {
     display: block;
-    width: 20%;
+    width: 50px;
     margin-left: 40%;
     padding: 10px;
-    background-color: #007BFF;
+    background: #007BFF;
     color: #fff;
-    font-size: 16px;
+    font-size: 0.5rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -408,18 +415,25 @@ header h1 span:hover{
 
 .contact-form button:hover {
     transition: .2s ease-in;
-    background-color: #0056b3;
-    width: 15%;
-    margin-left: 42.5%;
+    background: #1e1e1e;
+    box-shadow:  0 0 10px #4285f4, 0 0 20px #4285f4, 0 0 30px #4285f4;
 }
 
 /**footer**/
 
 footer{
-    position: relative;
+    position: fixed;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
     text-align: center;
-    color: #00ffcc;
-    font-size: 1.5rem;
+    padding: 10px 0;
+}
+footer p{
+    font-size: 1rem;
 }
 
 /**responsive code**/
@@ -438,7 +452,13 @@ footer{
     }
 }
 
-@media (width < 600px){
+@media (width < 400px){
+    .header{
+        height: 1rem;
+    }
+    .nav-bar ul li a{
+        font-size: 0.5rem;
+    }
     .h2-portfolio{
         font-size: large;
         letter-spacing: 2px;
@@ -468,11 +488,20 @@ footer{
     }
     .services ul .li-services a{
         font-size: small;
-        padding: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-top: 0;
-        padding-bottom: 0;
+    }
+    .contact h2{
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .contact .li2-services{
+        display: flex;
+        justify-content: center;
+    }
+    .contact .li2-services a{
+        text-align: center;
+        padding-left: 1rem;
+        margin: 0.5rem;
     }
     .contact-form h2{
         font-size: medium;
