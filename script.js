@@ -25,29 +25,6 @@ link4.addEventListener('click', () => {
     scrollToElement('.contact');
 })
 
- // Inline JavaScript untuk pengujian langsung
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contactForm');
-
-            contactForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-
-                console.log('Form Submitted:');
-                console.log('Name:', name);
-                console.log('Email:', email);
-                console.log('Message:', message);
-
-                contactForm.reset();
-                alert('thank you for your attention');
-            });
-        });
-
-
-
 
 // Menambahkan kelas "page-loaded" setelah halaman selesai dimuat
 document.addEventListener("DOMContentLoaded", () => {
@@ -114,3 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     scrollElements.forEach((el) => observer.observe(el));
 });
+
+function readMore() {
+    alert('This website under development');
+}
