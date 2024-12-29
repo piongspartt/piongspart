@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Piongspart – Web Developer</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 </head>
@@ -40,15 +40,15 @@
        <h2 class="h2-portfolio"><span class="add-styles">Portfolio</span></h2>
 
         <section id="portfolio" class="portfolio">
-            <div class="portfolio-item">
+            <div class="portfolio-item" id="readMore1">
                 <h3>Project 1</h3>
-                <p>Description of the project and the technologies used.</p>
-                <a href="#"><i class="ri-arrow-right-line">Visit Now</i></a>
+                <p>Developing a Website for Snack Food Outlet  </p>
+                <a href="#" onclick="readMore(1)" class="readMore1"><i class="ri-arrow-right-line">Visit Now</i></a>
             </div>
-            <div class="portfolio-item">
+            <div class="portfolio-item" id="readMore2">
                 <h3>Project 2</h3>
-                <p>Description of the project and the technologies used.</p>
-                <a href="#"><i class="ri-arrow-right-line">Visit Now</i></a>
+                <p>Description of the project.</p>
+                <a href="#" onclick="readMore(2)" class="readMore2"><i class="ri-arrow-right-line">Visit Now</i></a>
             </div>
         </section>
 
@@ -64,22 +64,21 @@
                 </li>
             </ul>
         </section>
-
+        
         <section class="contact">   
             <h2><span class="add-styles">Contact Me</span></h2>
             <ul>
                 <li class="li2-services">
                     <a href="myinstagram.html" class="i"><i class="ri-instagram-line"></i></a>
-                    <a href="https://www.facebook.com/profile.php?id=100073808582882" class="x"><i class="ri-twitter-x-line"></i></a>
-                    <a href="https://x.com/Piongspart?t=Tg5uorxXBHDk0kH1TIpFNQ&s=09" class="f"><i class="ri-facebook-line"></i></a>
+                    <a href="https://x.com/Piongspart?t=Tg5uorxXBHDk0kH1TIpFNQ&s=09" class="x"><i class="ri-twitter-x-line"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100073808582882" class="f"><i class="ri-facebook-line"></i></a>
                 </li>
             </ul>
         </section>
-        </div>
  
         <section id="contact" class="contact-form">
             <h2><span class="add-styles">Send me your critique</span></h2>
-            <form id="contactForm" class="form">
+            <form id="contactForm" class="form" action="https://formspree.io/f/xrbbkjqz" method="post">
                 <input type="text" id="name" name="name" placeholder="Your Name" required>
                 <input type="email" id="email" name="email" placeholder="Your Email" required>
                 <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
@@ -91,6 +90,7 @@
         </section>
     </div>
 
+    
     <footer>
         <p>&copy; 2024 PIONGSPART. All Rights Reserved.</p>
     </footer>
